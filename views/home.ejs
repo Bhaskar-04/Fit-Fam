@@ -1,0 +1,419 @@
+<% include ./partials/header.ejs %>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+    }
+
+    .navbar-btn .btn-dark {
+      background-color: blueviolet;
+      border: transparent;
+      padding: 10px 40px;
+    }
+
+    .navbar-nav {
+      margin: auto;
+    }
+
+    .cl-bv {
+      color: blueviolet;
+    }
+
+    a.nav-link {
+      color: gray;
+    }
+
+    .navbar-brand {
+      font-size: 2rem;
+    }
+
+    #sec1 {
+      background-image: url(https://thumbs.dreamstime.com/b/d-render-abstract-gradient-colorful-fluids-drops-soaps-bubbles-blobs-floating-air-isolated-white-background-188652305.jpg);
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .modal-contain {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 5px;
+      color: #333;
+      font-family: sans-serif;
+      line-height: 1.5;
+      width: 100%;
+      height: 100%;
+      padding: 1rem 2rem;
+    }
+
+    @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      .modal-contain {
+        -webkit-backdrop-filter: blur(100px);
+        backdrop-filter: blur(100px);
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .warning {
+        display: none;
+      }
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    .frosted-contain {
+      width: 100%;
+      height: 100%;
+    }
+
+    .content h1 {
+      font-size: 4.5rem;
+      text-align: center;
+      font-size: 900;
+    }
+
+    .content {
+      width: 80%;
+      margin: auto;
+    }
+
+    #programs {
+      width: 100%;
+    }
+
+    #programs .row {
+      margin: auto;
+      padding: 5% 5%;
+    }
+
+    .left-most,
+    .center,
+    .right-most {
+      background-color: #f3f3f3;
+    }
+
+    .left-most {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .right-most {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .col-lg-3 {
+      padding: 2% 5%;
+    }
+
+    .left-most,
+    .center {
+      border-right: 1px solid blueviolet;
+    }
+
+    #about {
+      margin-top: 15%;
+    }
+
+    #about .col-lg-6 h1 {
+      text-align: left;
+      font-size: 3.5rem;
+    }
+
+    #about .content .btn-dark {
+      background-color: blueviolet;
+      border: transparent;
+      padding: 10px 40px;
+    }
+
+    #experiences {
+      background-color: #f3f3f3;
+      width: 100%;
+      margin-top: 15%;
+    }
+
+    #experiences .row {
+      margin: auto;
+      padding: 5% 5%;
+    }
+
+    #pricing {
+      width: 100%;
+      text-align: center;
+      margin-top: 10%;
+    }
+
+    #pricing .row {
+      margin: auto;
+    }
+
+    .card {
+      border: transparent;
+      background-color: #f3f3f3;
+      border-radius: 20px;
+    }
+
+    .card-text {
+      text-align: center;
+    }
+
+    .col-lg-3 .btn-outline-dark {
+      border: 1px solid blueviolet;
+      color: blueviolet;
+    }
+
+    .col-lg-3 .btn-dark {
+      background-color: blueviolet;
+      border: transparent;
+    }
+
+    .col-lg-3 .btn-lg {
+      width: 80%;
+    }
+
+    .col-lg-3 .btn-outline-dark:hover {
+      background-color: blueviolet;
+      color: white;
+    }
+
+    #testimonials {
+      width: 90%;
+      margin: auto;
+    }
+
+    #testimonials .row {
+      width: 100%;
+    }
+
+    footer .btn-outline-dark {
+      border: 1px solid blueviolet;
+      color: blueviolet;
+    }
+
+    footer .btn-dark {
+      background-color: blueviolet;
+      border: transparent;
+    }
+
+    footer .btn-outline-dark:hover {
+      background-color: blueviolet;
+      color: white;
+    }
+
+    footer input {
+      padding: 1% 5%;
+      border-radius: 10px;
+      border: transparent;
+    }
+
+    footer {
+      margin-top: 15%;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="sec1">
+    <div class="frosted-contain">
+      <div class="modal-contain">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand cl-bv" href="#">Fitney.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"></button>
+            <span class="navbar-toggler-icon"></span>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link cl-bv" style="color: blueviolet; font-weight: 800;" href="#">Home</a>
+                <a class="nav-link" href="#">Trainers</a>
+                <a class="nav-link" href="#">Programs</a>
+                <a class="nav-link" href="#">Experience</a>
+                <a class="nav-link" href="#">Pricing</a>
+
+              </div>
+              <div class="navbar-btn">
+                <button class="btn btn-dark">Login</button>
+              </div>
+            </div>
+          </div>
+        </nav><br><br><br>
+        <div class="content">
+          <h1>Get Your Perfect Workout With The Perfect <span class="cl-bv">Trainers</span></h1><br><br>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="programs">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <h1><b>Training Programs We Offer</b></h1>
+      </div>
+      <div class="col-lg-3 col-md-6 left-most">
+        <h3>Yoga</h3>
+        <p>Enjoy yoga classes for all levels, body elastic, body weight workouts, barre, pilates, and more.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 center">
+        <h3>Muscles</h3>
+        <p>Regular strength training improves the health of your bones, muscles, and connective tissue.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 right-most">
+        <h3>Fitness</h3>
+        <p>Your trainer will prepare and show you a workout regime designed to meet your fitness level and goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="row">
+      <div class="col-lg-6">
+      </div>
+      <div class="col-lg-6">
+        <div class="content">
+          <h4 class="cl-bv">About</h4>
+          <h1><b>Body Fit Routine for Health Investment</b></h1>
+          <p>Your body will love you and hate you at the same time because of the energy you put into making your body feel fitter, healthier, and lighter. Become healthier.</p>
+          <button class="btn btn-dark">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiences">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <h1>Training Experiences</h1>
+        <p class="cl-bv">Alma Victoria Solares</p><br>
+        <p>images here -></p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+
+      </div>
+      <div class="col-lg-4 col-md-6">
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h3 class="cl-bv">Pricing Plan</h3>
+    <h1><b>Join Our Membership,<br>Let's Start</b></h1><br><br>
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title  text-muted">Daily Plan</h5><br>
+            <h1 class="card-subtitle mb-2"><b>$15</b></h1><br>
+            <div style="border-top: 1px solid blueviolet;"><br>
+              <ul>
+                <li class="card-text" style="text-align: left;">2 Hours of Personal Training</li>
+                <li class="card-text" style="text-align: left;">Free Consulting</li>
+              </ul>
+            </div>
+            <button class="btn btn-outline-dark btn-lg">Join Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title  text-muted">Weekly Plan</h5><br>
+            <h1 class="card-subtitle mb-2"><b>$50</b></h1><br>
+            <div style="border-top: 1px solid blueviolet;"><br>
+              <ul>
+                <li class="card-text" style="text-align: left;">3 Hours of Personal Training</li>
+                <li class="card-text" style="text-align: left;">Free Consulting</li>
+              </ul>
+            </div>
+            <button class="btn btn-outline-dark btn-lg">Join Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title  text-muted">Monthly Plan</h5><br>
+            <h1 class="card-subtitle mb-2"><b>$150</b></h1><br>
+            <div style="border-top: 1px solid blueviolet;"><br>
+              <ul>
+                <li class="card-text" style="text-align: left;">5 Hours of Personal Training</li>
+                <li class="card-text" style="text-align: left;">Free Consulting</li>
+                <li class="card-text" style="text-align: left;">Exercise Program</li>
+              </ul>
+            </div>
+            <button class="btn btn-dark btn-lg">Join Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title  text-muted">Yearly Plan</h5><br>
+            <h1 class="card-subtitle mb-2"><b>$500</b></h1><br>
+            <div style="border-top: 1px solid blueviolet;"><br>
+              <ul>
+                <li class="card-text" style="text-align: left;">5 Hours of Personal Training</li>
+                <li class="card-text" style="text-align: left;">Free Consulting</li>
+                <li class="card-text" style="text-align: left;">Exercise Program</li>
+                <li class="card-text" style="text-align: left;">Nutrition Plan</li>
+              </ul>
+            </div>
+            <button class="btn btn-outline-dark btn-lg">Join Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <h4 class="cl-bv">Testimonials</h4>
+        <h1 style="text-align:left; font-size: 4rem;"><b>Happiest Trainee Reviews</b></h1>
+      </div>
+      <div class="col-lg-6 col-md-6" style="background-color: #f3f3f3; border-radius: 20px; padding: 5% 5%;">
+        <h3><b>John Doe</b></h3>
+        <p style="color: gray;">Bussinessman</p>
+        <p style="color: gray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at gravida est. Pellentesque tempor gravida orci, vitae fringilla mauris consectetur nec. Aliquam hendrerit lectus et accumsan congue. Sed tincidunt ante interdum imperdiet
+          facilisis. Donec euismod libero nisi, non congue mauris sagittis nec.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background-color: #f3f3f3; text-align: center; padding: 5% 5%;">
+    <h1>Get the Latest Updates From Us</h1>
+    <p style="color: gray;">Join our mailing list by entering your email for exclusive information.</p>
+    <input placeholder="example@1234.com" type="email"><br><br>
+    <button class="btn btn-dark btn-lg">Get Updates</button>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<% include ./partials/footer.ejs %>
